@@ -6,6 +6,7 @@
 
 ## Estrutura inicial
 
+```console
 youreletroshop/
 ├── backend
 │   ├── config
@@ -27,6 +28,7 @@ youreletroshop/
 ├── package.json
 ├── Procfile
 └── README.md
+```
 
 * Obs: Embora em pasta separada, as dependencias do backend estão na pasta raiz 'youreletroshop/node_modules'. As dependências do frontend estão na pasta frontend mesmo.
 
