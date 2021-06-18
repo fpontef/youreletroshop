@@ -2,7 +2,33 @@
 
 ## Projeto de loja online usada como aprendizado do curso Ecommerce MERN com Brad Traversy
 
-- Este projeto necessita do NodeJS, NPM e MongoDB
+- Este projeto necessita do NodeJS, NPM e MongoDB.
+
+## Estrutura inicial
+
+youreletroshop/
+├── backend
+│   ├── config
+│   ├── controllers
+│   ├── data
+│   ├── middleware
+│   ├── models
+│   ├── routes
+│   ├── seeder.js
+│   ├── server.js
+│   └── utils
+├── frontend
+│   ├── node_modules
+│   ├── package.json
+│   ├── public
+│   ├── README.md
+│   └── src
+├── node_modules
+├── package.json
+├── Procfile
+└── README.md
+
+* Obs: Embora em pasta separada, as dependencias do backend estão na pasta raiz 'youreletroshop/node_modules'. As dependências do frontend estão na pasta frontend mesmo.
 
 ## Instalação:
 
@@ -29,8 +55,6 @@ npm install
 
 - Executando o projeto Frontend e Backend:
   Na pasta 'youreletroshop'
-
-#### TODO
 
 - Comandos disponíveis:
 
