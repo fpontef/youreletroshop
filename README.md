@@ -7,7 +7,9 @@
 ## Instalação:
 
 - Download via github:
+```console
   git clone URL_DO_PROJETO.git
+```
 
 - Configuração:
   Copiar ou renomear arquivo .env.sample para .env dentro da pasta 'youreletroshop'
