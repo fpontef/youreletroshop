@@ -30,11 +30,21 @@ youreletroshop/
 └── README.md
 ```
 
-* Obs: Embora em pasta separada, as dependencias do backend estão na pasta raiz 'youreletroshop/node_modules'. As dependências do frontend estão na pasta frontend mesmo.
+- Obs: Embora em pasta separada, as dependencias do backend estão na pasta raiz 'youreletroshop/node_modules'. As dependências do frontend estão na pasta frontend mesmo.
+
+## Tela API
+
+Documentação provisória da api feita usando o Postman, pode ser vista pelo link abaixo:
+https://documenter.getpostman.com/view/16150471/TzY7dZAC
+
+![Tela Documentação da API pelo Postman](https://octodex.github.com/images/yaktocat.png)
+
+## Tela Frontend
 
 ## Instalação:
 
 - Download via github:
+
 ```console
   git clone URL_DO_PROJETO.git
 ```
