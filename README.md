@@ -34,12 +34,43 @@ youreletroshop/
 
 ## Tela API
 
-Documentação provisória da api feita usando o Postman, pode ser vista pelo link abaixo:
+- Documentação provisória da api feita usando o Postman, pode ser vista pelo link abaixo:
 https://documenter.getpostman.com/view/16150471/TzY7dZAC
 
-![Tela Documentação da API pelo Postman](https://octodex.github.com/images/yaktocat.png)
+![Tela Documentação da API pelo Postman](https://github.com/fpontef/youreletroshop/blob/main/screenshots/youreletroshop-api-postman-docs.jpg?raw=true)
+
+- Banco de Dados usando Atlas Mongo
+![Banco de Dados usando Atlas Mongo](https://github.com/fpontef/youreletroshop/blob/main/screenshots/youreletroshop-cloud-atlas-mongo.jpg?raw=true)
+
 
 ## Tela Frontend
+- Página Principal Desktop
+![Tela Página Principal - Desktop](https://github.com/fpontef/youreletroshop/blob/main/screenshots/youreletroshop-home-desktop.jpg?raw=true)
+
+- Página Principal Mobile
+![Tela Página Principal - Mobile](https://github.com/fpontef/youreletroshop/blob/main/screenshots/youreletroshop-home-phone.jpg?raw=true)
+
+- Tela Busca de Produtos
+![Tela Busca de Produtos](https://github.com/fpontef/youreletroshop/blob/main/screenshots/youreletroshop-search-produts.jpg?raw=true
+)
+
+- Tela Usuário - Perfil
+![Tela Usuário - Perfil](https://github.com/fpontef/youreletroshop/blob/main/screenshots/youreletroshop-user-profile.jpg?raw=true)
+
+- Tela Usuário - Detalhes do Pedido
+![Tela Usuário - Pedido](https://github.com/fpontef/youreletroshop/blob/main/screenshots/youreletroshop-user-orderdetails.jpg?raw=true)
+
+- Tela Admin - Principal com menu administrativo
+![Tela Admin - Principal com menu administrativo](https://github.com/fpontef/youreletroshop/blob/main/screenshots/youreletroshop-admin-home-menu.jpg?raw=true)
+
+- Tela Admin - Menu de usuários
+![Tela Admin - Menu de usuários](https://github.com/fpontef/youreletroshop/blob/main/screenshots/youreletroshop-admin-users-page.jpg?raw=true)
+
+- Tela Usuário - Avaliação de Produto
+![Tela Usuário - Avaliação de Produto](https://github.com/fpontef/youreletroshop/blob/main/screenshots/youreletroshop-user-review.jpg?raw=true)
+
+- Tela Admin - Menu de Produtos (adicionar/remover/editar)
+![Tela Admin - Menu de Produtos](https://github.com/fpontef/youreletroshop/blob/main/screenshots/youreletroshop-admin-products-page.jpg?raw=true)
 
 ## Instalação:
 
