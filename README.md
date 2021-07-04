@@ -3,6 +3,7 @@
 ## Projeto de loja online usada como aprendizado do curso Ecommerce MERN com Brad Traversy
 
 - Este projeto necessita do NodeJS, NPM e MongoDB.
+- Hospedada no Heroku > [YourEletroShop](https://youreletroshop.herokuapp.com/) (Free tier, então por favor tenha paciência, ele demora pra começar)
 
 ## Estrutura inicial
 
