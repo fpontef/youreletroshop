@@ -23,30 +23,30 @@ import {
   PRODUCT_TOP_FAIL,
 } from '../constants/productConstants.js';
 
-export const listProducts = (keyword = '', pageNumber = '') => async (
-  dispatch
-) => {
-  try {
-    dispatch({ type: PRODUCT_LIST_REQUEST });
+export const listProducts =
+  (keyword = '', pageNumber = '') =>
+  async (dispatch) => {
+    try {
+      dispatch({ type: PRODUCT_LIST_REQUEST });
 
-    const { data } = await axios.get(
-      `/api/products?keyword=${keyword}&pageNumber=${pageNumber}`
-    );
+      const { data } = await axios.get(
+        `/api/products?keyword=${keyword}&pageNumber=${pageNumber}`
+      );
 
-    dispatch({
-      type: PRODUCT_LIST_SUCCESS,
-      payload: data,
-    });
-  } catch (err) {
-    dispatch({
-      type: PRODUCT_LIST_FAIL,
-      payload:
-        err.response && err.response.data.message
-          ? err.response.data.message
-          : err.message,
-    });
-  }
-};
+      dispatch({
+        type: PRODUCT_LIST_SUCCESS,
+        payload: data,
+      });
+    } catch (err) {
+      dispatch({
+        type: PRODUCT_LIST_FAIL,
+        payload:
+          err.response && err.response.data.message
+            ? err.response.data.message
+            : err.message,
+      });
+    }
+  };
 
 export const listProductDetails = (id) => async (dispatch) => {
   try {
@@ -75,8 +75,7 @@ export const deleteProduct = (productId) => async (dispatch, getState) => {
       type: PRODUCT_DELETE_REQUEST,
     });
 
-    // Admin required.
-    // 'userInfo' to get Token, 'config' into 'axios' to check Token
+    // Get if user is admin
     const {
       userLogin: { userInfo },
     } = getState();
@@ -107,8 +106,6 @@ export const createProduct = () => async (dispatch, getState) => {
       type: PRODUCT_CREATE_REQUEST,
     });
 
-    // Admin required.
-    // 'userInfo' to get Token, 'config' into 'axios' to check Token
     const {
       userLogin: { userInfo },
     } = getState();
@@ -147,8 +144,6 @@ export const updateProduct = (product) => async (dispatch, getState) => {
       type: PRODUCT_UPDATE_REQUEST,
     });
 
-    // Admin required.
-    // 'userInfo' to get Token, 'config' into 'axios' to check Token
     const {
       userLogin: { userInfo },
     } = getState();
@@ -160,8 +155,6 @@ export const updateProduct = (product) => async (dispatch, getState) => {
       },
     };
 
-    // Empty object on axios.post('url', {}, config) because we're making
-    // a post request, but not sending any object
     const { data } = await axios.put(
       `/api/products/${product._id}`,
       product,
@@ -183,45 +176,39 @@ export const updateProduct = (product) => async (dispatch, getState) => {
   }
 };
 
-export const createProductReview = (productId, review) => async (
-  dispatch,
-  getState
-) => {
-  try {
-    dispatch({
-      type: PRODUCT_CREATE_REVIEW_REQUEST,
-    });
+export const createProductReview =
+  (productId, review) => async (dispatch, getState) => {
+    try {
+      dispatch({
+        type: PRODUCT_CREATE_REVIEW_REQUEST,
+      });
 
-    // Admin required.
-    // 'userInfo' to get Token, 'config' into 'axios' to check Token
-    const {
-      userLogin: { userInfo },
-    } = getState();
+      const {
+        userLogin: { userInfo },
+      } = getState();
 
-    const config = {
-      headers: {
-        'Content-Type': 'application/json',
-        Authorization: `Bearer ${userInfo.token}`,
-      },
-    };
+      const config = {
+        headers: {
+          'Content-Type': 'application/json',
+          Authorization: `Bearer ${userInfo.token}`,
+        },
+      };
 
-    // Empty object on axios.post('url', {}, config) because we're making
-    // a post request, but not sending any object
-    await axios.post(`/api/products/${productId}/reviews`, review, config);
+      await axios.post(`/api/products/${productId}/reviews`, review, config);
 
-    dispatch({
-      type: PRODUCT_CREATE_REVIEW_SUCCESS,
-    });
-  } catch (err) {
-    dispatch({
-      type: PRODUCT_CREATE_REVIEW_FAIL,
-      payload:
-        err.response && err.response.data.message
-          ? err.response.data.message
-          : err.message,
-    });
-  }
-};
+      dispatch({
+        type: PRODUCT_CREATE_REVIEW_SUCCESS,
+      });
+    } catch (err) {
+      dispatch({
+        type: PRODUCT_CREATE_REVIEW_FAIL,
+        payload:
+          err.response && err.response.data.message
+            ? err.response.data.message
+            : err.message,
+      });
+    }
+  };
 
 export const listTopRatedProducts = () => async (dispatch) => {
   try {

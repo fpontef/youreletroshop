@@ -14,8 +14,6 @@ const OrderListScreen = ({ history }) => {
   const orderList = useSelector((state) => state.orderList);
   const { loading, error, orders } = orderList;
 
-  // userInfo to check for isAdmin and avoid unwanted access.
-  // @TODO TODO is a beter <ProtectedRoute> inside route at App.js
   const userLogin = useSelector((state) => state.userLogin);
   const { userInfo } = userLogin;
 

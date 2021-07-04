@@ -36,8 +36,6 @@ const ProductListScreen = ({ history, match }) => {
     product: createdProduct,
   } = productCreate;
 
-  // userInfo to check for isAdmin and avoid unwanted access.
-  // @TODO TODO is a beter <ProtectedRoute> inside route at App.js
   const userLogin = useSelector((state) => state.userLogin);
   const { userInfo } = userLogin;
 
@@ -51,8 +49,6 @@ const ProductListScreen = ({ history, match }) => {
     if (successCreate) {
       history.push(`/admin/product/${createdProduct._id}/edit`);
     } else {
-      // listProducts(keyword, pageNumber) , como não tem keyword,
-      // então colocamos uma string vazia.
       dispatch(listProducts('', pageNumber));
     }
   }, [

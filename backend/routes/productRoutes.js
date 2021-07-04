@@ -21,9 +21,6 @@ router.route('/top').get(getTopProducts);
 // @desc   Fetch single product
 // @route  GET /api/products/:id
 // @access Public
-// Other way is show here, instead of router.route, using just router.get,
-// but I preffer to keep the pattern router.route().HTTPVERB
-//router.get('/:id', getProductById);
 router
   .route('/:id')
   .get(getProductById)

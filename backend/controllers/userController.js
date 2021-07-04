@@ -177,8 +177,10 @@ export const updateUserById = asyncHandler(async (req, res) => {
   if (user) {
     user.name = req.body.name || user.name;
     user.email = req.body.email || user.email;
-    // isAdmin is different because user.isAdmin can be true or false
-    // if doing X || Y, when put false, will insist in true if already there.
+    /**
+     * isAdmin is different because user.isAdmin can be true or false
+     * if doing X || Y, when put false, will insist in true if already there.
+     */
     user.isAdmin = req.body.isAdmin;
     if (req.body.password) {
       user.password = req.body.password;

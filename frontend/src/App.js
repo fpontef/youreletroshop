@@ -18,12 +18,6 @@ import UserListScreen from './screens/UserListScreen';
 import UserEditScreen from './screens/UserEditScreen';
 import OrderListScreen from './screens/OrderListScreen';
 
-// O "exact" foi colocado especialmente quando envolve paginação
-// o motivo que é para acessar o link: /search/PALAVRACHAVE/pagina/1
-// ele iria passar antes pelo link:  /search/PALAVRACHAVE e isso causaria
-// uma duplicação/sobreposição na página.
-// o exact como sugere, força o link a ser EXATAMENTE aquele.
-
 const App = () => {
   return (
     <Router>

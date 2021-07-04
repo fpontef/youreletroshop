@@ -1,26 +1,19 @@
-// Wes version
-/*
-function asyncHandler(fn) {
-  return function (req, res, next) {
-    return fn(req, res, next).catch(next);
-  };
-}
- */
+// Other options for asyncHandler.
+// WesBos
+// function asyncHandler(fn) {
+//   return function (req, res, next) {
+//     return fn(req, res, next).catch(next);
+//   };
+// }
 
-//Versão ruim:
-/*
-const asyncHandler = (fn) => {
-  return async (req, res, next) => {
-    try {
-      await fn(req, res);
-    } catch (err) {
-      next(err);
-    }
-  };
-};
- */
-// Versão ruim melhorada, agora tem await fn(req, res, next)  e funcional!
-// /*
+// express-async-handler
+// const asyncHandler = (fn) =>
+//   function asyncUtilWrap(...args) {
+//     const fnReturn = fn(...args);
+//     const next = args[args.length - 1];
+//     return Promise.resolve(fnReturn).catch(next);
+//   };
+
 const asyncHandler = (fn) => {
   return async (req, res, next) => {
     try {
@@ -30,17 +23,6 @@ const asyncHandler = (fn) => {
     }
   };
 };
-// */
-
-// Versão do pacote npm express-async-handler
-/*
-const asyncHandler = (fn) =>
-  function asyncUtilWrap(...args) {
-    const fnReturn = fn(...args);
-    const next = args[args.length - 1];
-    return Promise.resolve(fnReturn).catch(next);
-  };
- */
 
 const notFound = (req, res, next) => {
   const err = new Error(`Not found - ${req.originalUrl}`);
@@ -76,5 +58,4 @@ const mongoValidationErrors = (err, req, res, next) => {
   if (!err.errors) return next(err);
 };
 
-// sem error handler:
 export { asyncHandler, notFound, errorHandler, mongoValidationErrors };

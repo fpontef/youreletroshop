@@ -5,7 +5,7 @@ const users = [
     name: 'Admin User',
     email: 'admin@asd.com',
     password: bcrypt.hashSync('123456', 10),
-    isAdmin: true
+    isAdmin: true,
   },
   {
     name: 'joao',
@@ -16,7 +16,7 @@ const users = [
     name: 'test',
     email: 'teste@asd.com',
     password: bcrypt.hashSync('123456', 10),
-  }
+  },
 ];
 
 export default users;

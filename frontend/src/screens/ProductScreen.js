@@ -62,11 +62,6 @@ const ProductScreen = ({ history, match }) => {
   };
 
   const addToCartHandler = () => {
-    // Brad way
-    //history.push(`/cart/${match.params.id}?qty=${qty}`);
-    //
-    // Alternativo --  também mexi no ./CartScreen.js e removi/comentei lá:
-    //https://www.udemy.com/course/mern-ecommerce/learn/lecture/22494062#questions/12760999/
     dispatch(addToCart(product._id, qty));
     history.push('/cart');
   };

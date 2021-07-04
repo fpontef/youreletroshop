@@ -18,13 +18,7 @@ connectDB();
 const app = express();
 
 // express.json() && express.urlencoded are just for POST forms.
-// Old days we used body-pass to req.body
 app.use(express.json());
-
-// Allow choose [false]: querystring library vs [true]: qs library
-// extended: true == { foo: { bar: { baz: 'foobarbaz' }}}
-// will disable for now. Basir had enabled, Brad do not.
-//app.use(express.urlencoded({ extended: true }));
 
 // Setting route-paths
 app.use('/api/products', productRoutes);
@@ -40,7 +34,7 @@ const __dirname = path.resolve();
 if (process.env.NODE_ENV === 'production') {
   app.use(express.static(path.join(__dirname, '/frontend/build')));
 
-  // Locks user in production mode to index instead 'api running' message.
+  // Redirect user when in production mode to index instead api page
   app.get('*', (req, res) =>
     res.sendFile(path.resolve(__dirname, 'frontend', 'build', 'index.html'))
   );

@@ -35,25 +35,6 @@ const ProfileScreen = ({ location, history }) => {
     orders,
   } = orderListMyOrders;
 
-  /* Observação do Basir:
-   * userInfo is different from user.
-   * userInfo comes from localStorage.
-   * user comes from the /api/users/profile.
-   * so we have to check the existence of it.
-   */
-  // useEffect(() => {
-  //   if (!userInfo) {
-  //     history.push('/login');
-  //   } else {
-  //     if (!user || !user.name) {
-  //       dispatch(getUserDetails('profile'));
-  //       dispatch(listMyOrders());
-  //     } else {
-  //       setName(user.name);
-  //       setEmail(user.email);
-  //     }
-  //   }
-  // }, [dispatch, history, userInfo, user]);
   useEffect(() => {
     if (!userInfo) return history.push('/login');
     if (!user || !user.name || success) {

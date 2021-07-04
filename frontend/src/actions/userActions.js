@@ -43,7 +43,6 @@ export const login = (email, password) => async (dispatch) => {
 
     dispatch({ type: USER_LOGIN_SUCCESS, payload: data });
 
-    // Stores the "response" sent by API when login@/api/users/login
     localStorage.setItem('userInfo', JSON.stringify(data));
   } catch (err) {
     dispatch({
@@ -82,7 +81,6 @@ export const register = (name, email, password) => async (dispatch) => {
     dispatch({ type: USER_REGISTER_SUCCESS, payload: data });
     dispatch({ type: USER_LOGIN_SUCCESS, payload: data });
 
-    // Stores the "response" sent by API when login@/api/users/login
     localStorage.setItem('userInfo', JSON.stringify(data));
   } catch (err) {
     dispatch({
@@ -95,9 +93,7 @@ export const register = (name, email, password) => async (dispatch) => {
   }
 };
 
-// @id  Pode vir o ID do USER ou um caminho exemplo:
-// Opção com ID: /api/users/1234  |  Opção com caminho: /api/users/profile
-// O caminho /profile busca a identificação do usuário logado.
+// @id - paths can be: /api/users/1234 | /api/users/profile
 export const getUserDetails = (id) => async (dispatch, getState) => {
   try {
     dispatch({ type: USER_DETAILS_REQUEST });
@@ -125,7 +121,6 @@ export const getUserDetails = (id) => async (dispatch, getState) => {
   }
 };
 
-// @user  Get the entire user object
 export const updateUserProfile = (user) => async (dispatch, getState) => {
   try {
     dispatch({ type: USER_UPDATE_PROFILE_REQUEST });
@@ -219,7 +214,6 @@ export const deleteUser = (userId) => async (dispatch, getState) => {
   }
 };
 
-// @user  Get the entire user object
 export const updateUser = (user) => async (dispatch, getState) => {
   try {
     dispatch({ type: USER_UPDATE_REQUEST });

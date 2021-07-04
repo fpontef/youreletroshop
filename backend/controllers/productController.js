@@ -5,9 +5,9 @@ import Product from '../models/productModel.js';
 // @route  GET /api/products?keyword=PRODUCTNAME
 // @access Public
 export const getProducts = asyncHandler(async (req, res) => {
-  // const pageSize OU limit_of_records ou items_per_page = 10;
-  const pageSize = 5;
-  // page vai ser o ?pageNumber=1
+  // Some guides call this: pageSize or limit_of_records or items_per_page;
+  const pageSize = 6;
+  // Called by ?pageNumber=1
   const page = Number(req.query.pageNumber) || 1;
   const keyword = req.query.keyword
     ? {
@@ -23,8 +23,7 @@ export const getProducts = asyncHandler(async (req, res) => {
   const products = await Product.find({ ...keyword })
     .limit(pageSize)
     .skip((page - 1) * pageSize);
-  // Math.ceil():
-  // Vai arrendondar a média do contador de produtos / qtd produtos a exibir
+  // Math.ceil(): round média do contador de produtos / qtd produtos a exibir.
   res.json({ products, page, pages: Math.ceil(productsCount / pageSize) });
 });
 
@@ -81,15 +80,8 @@ export const createProduct = asyncHandler(async (req, res) => {
 // @route  PUT /api/products/:id
 // @access Private/Admin
 export const updateProduct = asyncHandler(async (req, res) => {
-  const {
-    name,
-    price,
-    description,
-    image,
-    brand,
-    category,
-    countInStock,
-  } = req.body;
+  const { name, price, description, image, brand, category, countInStock } =
+    req.body;
 
   const product = await Product.findById(req.params.id);
 
@@ -142,7 +134,6 @@ export const createProductReview = asyncHandler(async (req, res) => {
   product.reviews.push(review);
   product.numReviews = product.reviews.length;
 
-  // Overall Rating (rating total médio)
   product.rating =
     product.reviews.reduce((acc, item) => item.rating + acc, 0) /
     product.reviews.length;

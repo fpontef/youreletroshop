@@ -1,5 +1,3 @@
-// Brad version
-//import { useEffect } from 'react';
 import { Link } from 'react-router-dom';
 import { useDispatch, useSelector } from 'react-redux';
 import { Row, Col, ListGroup, Image, Form, Button } from 'react-bootstrap';
@@ -8,26 +6,10 @@ import { addToCart, removeFromCart } from '../actions/cartActions';
 import convertMoney from '../utils/convertMoney.js';
 
 const CartScreen = ({ match, location, history }) => {
-  // "Brad way" ver explicações abaixo, no useEffect:
-  /*
-  const productId = match.params.id;
-  const qty = location.search ? Number(location.search.split('=')[1]) : 1;
-  */
   const dispatch = useDispatch();
 
   const cart = useSelector((state) => state.cart);
   const { cartItems } = cart;
-
-  // Brad way, de acordo com os comentários do curso, usando addToCart direto na
-  // tela de produto é melhor, pois ao dar F5 na tela do carrinho, a qty volta
-  // pois é "hard coded" na barra de endereços
-  /*
-  useEffect(() => {
-    if (productId) {
-      dispatch(addToCart(productId, qty));
-    }
-  }, [dispatch, productId, qty]);
-  */
 
   const removeFromCartHandler = (id) => {
     dispatch(removeFromCart(id));

@@ -12,8 +12,6 @@ const UserListScreen = ({ history }) => {
   const userList = useSelector((state) => state.userList);
   const { loading, error, users } = userList;
 
-  // userInfo to check for isAdmin and avoid unwanted access.
-  // @TODO TODO is a beter <ProtectedRoute> inside route at App.js
   const userLogin = useSelector((state) => state.userLogin);
   const { userInfo } = userLogin;
 
